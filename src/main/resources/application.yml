@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: prometheus-exporter
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,prometheus
+  endpoint:
+    prometheus:
+      enabled: true
+  metrics:
+    export:
+      prometheus:
+        enabled: true
+server:
+  port: 9900
+  address: 0.0.0.0
+
+#logging:
+#  level:
+#    root: DEBUG           # For general debug logging
+#    org.springframework: DEBUG
+#    io.micrometer: DEBUG
+#    org.springframework.boot.actuate: DEBUG

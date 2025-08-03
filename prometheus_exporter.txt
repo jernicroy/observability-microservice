@@ -1,0 +1,8 @@
+# Download latest Node Exporter
+wget https://github.com/prometheus/node_exporter/releases/latest/download/node_exporter-1.8.0.linux-amd64.tar.gz
+tar xvf node_exporter-1.8.0.linux-amd64.tar.gz
+cd node_exporter-1.8.0.linux-amd64
+
+# Start Node Exporter
+./node_exporter &
+

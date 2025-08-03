@@ -1,0 +1,27 @@
+global:
+  scrape_interval: 15s
+
+scrape_configs:
+#  - job_name: 'spring-boot-nodes'
+#    metrics_path: '/actuator/prometheus'
+#    static_configs:
+#      - targets:
+#          - '192.168.31.17:9900'   # Exporter on device A
+#          - '192.168.31.157:9900'   # Exporter on device B
+#          - 'host.docker.internal:9900'  # Your own exporter (Docker on Windows)
+
+  - job_name: 'spring-boot-nodes'
+    metrics_path: '/actuator/prometheus'
+    static_configs:
+      - targets: ['192.168.31.17:9900']
+        labels:
+          instance: 'Desktop-Computer'
+      - targets: ['192.168.31.157:9900']
+        labels:
+          instance: 'Lenovo-Laptop'
+      - targets: ['192.168.31.71:9900']
+        labels:
+          instance: 'Main-Laptop'
+    basic_auth:
+      username: 'prometheus'
+      password: 'secret123'
